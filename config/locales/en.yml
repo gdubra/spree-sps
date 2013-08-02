@@ -1,0 +1,9 @@
+---
+en:
+  sps_source:
+    credit_card: Credit Card
+    quota_number: Number of Quotas
+    continue: Continue
+    
+  error:
+    validate_bad_request: You shouldn´t be here!!! 

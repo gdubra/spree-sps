@@ -1,0 +1,9 @@
+---
+es:
+  sps_source:
+    credit_card: Tarjeta de Credito
+    quota_number: Numero de Cuotas
+    continue: Continuar
+  
+  error:
+    validate_bad_request: No deberias de estar aqui!!! 

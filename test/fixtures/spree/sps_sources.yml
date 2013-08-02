@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sps_tx_code: MyText
+  sps_tx_date: 2013-04-25
+  sps_response: MyText
+  cc_owner: MyText
+  installments: 1
+
+two:
+  sps_tx_code: MyText
+  sps_tx_date: 2013-04-25
+  sps_response: MyText
+  cc_owner: MyText
+  installments: 1

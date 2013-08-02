@@ -1,0 +1,32 @@
+
+<head>
+	<script language="JavaScript">
+<% 
+sps =	Spree::PaymentMethod::SpsPayment.new() 
+	if sps.prefers_test_mode?
+%>		
+	var sps_action = '<%= url_for(:fake_sps_validar) %>'
+<% else %>
+   var sps_action = 'https://sps.decidir.com/sps-ar/Validar'
+<% end %>
+  var sps_payment_method_id = <%= Spree::PaymentMethod::find_by_type(Spree::PaymentMethod::SpsPayment.name).id %>
+  </script>
+  
+  <%= javascript_include_tag "sps_payment" %> <!-- For example -->
+</head>
+
+
+
+<p class="field sps_payment">
+  <%= label_tag "credit_card", t('sps_source.credit_card') %><span class="required">*</span><br/>
+  <%= select_tag(:mediodepago,options_for_select([['Visa',1],['MasterCard',20]])) %>
+</p>
+<p class="field">
+  <%= label_tag "quota_number", t('sps_source.quota_number') %><span class="required">*</span><br/>
+  <%= select_tag(:cuotas,options_for_select([['1',1],['2','2'],['3','3']])) %>
+</p>
+
+  <%= hidden_field_tag(:nrocomercio, sps.preferred_client_id )%>
+  <%= hidden_field_tag(:nrooperacion,  @order.number )%>
+  <%= hidden_field_tag(:monto, Spree::Money.new(@order.total,{:with_currency =>false}).to_s.gsub('.','').gsub('$','')  )%>
+  <%= hidden_field_tag(:urldinamica, url_for(:sps_checkout_callback) )%>

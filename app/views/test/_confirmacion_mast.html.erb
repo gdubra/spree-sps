@@ -1,0 +1,178 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>SPS DECIDIR - Confirmaci&oacute;n de Datos</title>
+<style>
+.texto{font-family:verdana,arial,helvetica;font-size:11px}
+.textochico{font-family:verdana,arial,helvetica;font-size:9px}
+</style>
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div align="center">
+<b><font class="texto">Confirmaci&oacute;n de la operaci&oacute;n.</font></b><BR><BR>
+<font class="textochico">Si sus datos son correctos, por favor confirme la operaci&oacute;n:</font>
+<FORM name="marcatarjeta" action="/sps-ar/SeleccionTarjeta" method="POST"> 
+<INPUT TYPE="HIDDEN" name="marcatarjeta" value="0"></FORM>
+<SCRIPT language="Javascript">
+function Volver()
+{
+	history.go(-1);
+}
+</SCRIPT>
+<!-- <SCRIPT LANGUAGE="VBScript"> --> 
+<div align="center">
+  <center>
+<table bgcolor="eff0f1" border="1" cellpadding="0" cellspacing="10" bordercolor="000099" rules="groups" width="652" style="border-collapse: collapse">
+  <!-- Datos a mostrar (obligatorios para Mastercard) -->
+  <TR> 
+    <TD> 
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">N&uacute;mero 
+        de Operaci&oacute;n: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @order_code %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD COLSPAN="2" HEIGHT="1"> 
+      <HR SIZE="1">
+    </TD>
+  </TR>
+  <TR> 
+    <TD  ROWSPAN="2" VALIGN="TOP">
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">Titular de la Tarjeta: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @cc_owner %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @cc_owner_email %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD HEIGHT="16"> 
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">N&uacute;mero 
+        de Tarjeta: </font></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right" HEIGHT="16">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @cc_number %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD>
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">Fecha de Vencimiento: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @cc_expire_date%></FONT></DIV>
+    </TD>
+  </TR>
+<TR>
+    <TD>
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">Tipo de Documento: </FONT></B></FONT>
+      </DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @cc_owner_doc_type %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">N&uacute;mero de Documento: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @cc_owner_doc %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">Fecha/Hora: </FONT></B></FONT></DIV>
+    <TD ALIGN="right"> 
+      <DIV ALIGN="LEFT">
+        <font class="texto"> 
+        <%=%></FONT></DIV>
+  </TR>
+  <TR> 
+    <TD> 
+      <DIV ALIGN="RIGHT"><font class="texto"> <B>
+        <font class="texto">Monto 
+        de la Operaci&oacute;n: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right"> 
+      <DIV ALIGN="LEFT">
+        <font class="texto"> 
+        <%= @order_total %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR>
+    <TD>
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">Moneda: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT">
+        <font class="texto"><%= @order_currency %></FONT> 
+      </DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD> 
+      <DIV ALIGN="RIGHT"><font class="texto"><B>
+        <font class="texto">Cantidad 
+        de Cuotas: </FONT></B></FONT></DIV>
+    </TD>
+    <TD ALIGN="right">
+      <DIV ALIGN="LEFT"> 
+        <font class="texto"><%= @order_quota %></FONT></DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD ALIGN="right"></TD>
+  </TR>
+  <TR> 
+    <TD WIDTH=100% COLSPAN="2" ALIGN="center" HEIGHT="20"> 
+     <%= form_tag(url_for(:fake_sps_confirmar_master), {:method=>:post,:name=>'forum',:onSubmit=>"document.formu.submit.disabled='true';"}) do%>	
+        <font class="texto">
+        <INPUT TYPE="hidden" NAME="confirmacion" VALUE="si">
+        </font><font class="texto">
+        <INPUT TYPE="submit" VALUE="Confirmar" NAME="submit"><font class="texto">
+        <input type="hidden" value="<%= @order_total%>" name="ORDER_TOTAL">
+		<input type="hidden" value="<%= @order_quota%>" name="ORDER_QUOTA">
+		<input type="hidden" value="<%= @order_currency%>" name="ORDER_CURRENCY">
+		<input type="hidden" value="<%= @order_code%>" name="ORDER_CODE">	
+		<input type="hidden" value="<%= @cc_owner_email%>" name="EMAILCLIENTE">
+		<input type="hidden" value="<%= @cc_owner%>" name="NOMBREENTARJETA">
+        </font></font>
+      <% end %>
+    </TD>
+  </TR>
+  <TR> 
+    <TD COLSPAN="2" ALIGN="center" HEIGHT="21"> 
+      <P> <B><FONT class="texto">| <A HREF="javascript:history.go(-1);">Volver</A> 
+        |</FONT></B></P>
+    </TD>
+  </TR>
+</TABLE> 
+<table border="0" height="61" align="center">
+	<td height="57" align="center">
+	<br><a TARGET="_blank" href="https://sps.decidir.com/sps_ar/sps_compra.html"><IMG src="/img/botonsps.gif" border="0">
+</table>
+  </center>
+</div>
+</BODY>
+</HTML>

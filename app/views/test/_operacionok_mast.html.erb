@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SPS DECIDIR - Operaci&oacute;n Exitosa</title>
+<style>
+.texto{font-family:verdana,arial,helvetica;font-size:11px}
+.textochico{font-family:verdana,arial,helvetica;font-size:9px}
+</style>
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div align="center">
+<font class="texto"><strong>La transacci&oacute;n ha sido APROBADA.</strong></font><br><br>
+<font class="texto">¡Su operaci&oacute;n fue realizada con &eacute;xito! Para su control usted recibir&aacute; en instantes un e-mail con los datos de su compra:</font><br><br>
+<table bgcolor="eff0f1" border="1" cellpadding="0" cellspacing="10" bordercolor="000099" rules="groups" width="652" style="border-collapse: collapse">
+<tr><td width="180"><strong><font class="texto">N&uacute;mero de Orden: </strong></td><td width="466"><%= @order_code %></font></td></tr>
+<tr><td width="180"><strong><font class="texto">C&oacute;digo MasterCard: </strong></td><td width="466">999999</font></td></tr>
+<tr><td><br></td></tr>
+<tr><td width="180"><strong><font class="texto">Titular de la Tarjeta:</strong></td><td width="466"><%= @cc_owner %></font></td></tr>
+<tr><td width="180"><strong><font class="texto">E-Mail: </strong></td><td width="466"><%= @cc_owner_mail %></font></td></tr>
+<tr><td width="180"><strong><font class="texto">Fecha/Hora: </strong></td><td width="466"><%= @date %></font></td></tr>
+<tr><td width="180"><strong><font class="texto">Monto de la Operaci&oacute;n: </strong></td><td width="466"><%= @order_total %></font></td></tr>
+<tr><td width="180"><strong><font class="texto">Moneda: </strong></td><td width="466"><%= @order_currency %></font></td></tr>
+<tr><td width="180"><strong><font class="texto">Cuotas: </strong></td><td width="466"><%= @order_quota %></font></td></tr>
+</font>
+</table>
+<br><a TARGET="_blank" href="<%=  order_url %>">continuar</a>
+</BODY>
+</HTML>

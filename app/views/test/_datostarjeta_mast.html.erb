@@ -1,0 +1,337 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Language" content="es-ar">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>SPS DECIDIR - Datos de la Tarjeta de Cr&eacute;dito</title>
+<%= stylesheet_link_tag "font-awesome.min.css" %>
+<%= stylesheet_link_tag "font-awesome-ie7.min.css" %>
+<style>
+
+.hard-gray-gradient {
+    background: -webkit-gradient(linear,center top, center bottom, from(#b5b5b5), to(#868686));
+    background: -moz-linear-gradient(to top, #868686, #b5b5b5);
+    background: -o-linear-gradient(to top, #868686, #b5b5b5);
+    background: linear-gradient(to top, #868686, #b5b5b5);
+}
+
+
+
+.red-gradient {
+    background: -webkit-gradient(linear,center top, center bottom, from(#ec3023), to(#b70b03));
+    background: -moz-linear-gradient(to bottom, #ec3023, #b70b03);
+    background: -o-linear-gradient(to bottom, #ec3023, #b70b03);
+    background: linear-gradient(to bottom, #ec3023, #b70b03);
+}
+
+body {
+  background: #f7f7f7;
+}
+
+a {
+  text-decoration: none;
+}
+
+table a {
+  float: left;
+}
+
+#DatosTarjetaForm {
+  overflow: hidden;
+  padding: 3%;
+}
+
+#DatosTarjetaForm table {
+  margin-top: 330px;
+}
+
+#DatosTarjetaForm select {
+ appearance: none;
+ -moz-appearance: none; /* Firefox */
+ -webkit-appearance: none;
+ border: 1px solid #cccccc;
+ height: 28px;
+ margin-top: 8px;
+ padding: 5px;
+ border-radius: 4px;
+ width: 100%;
+}
+
+.iframe-left-column {
+  width: 47%;
+  min-width: 200px;
+  float: left;
+  margin-right: 6%;
+}
+.iframe-right-column {
+  width: 47%;
+  min-width: 200px;
+  float: left;
+}
+.texto{
+  font-family: 'GothamMedium', verdana,arial,helvetica;
+  font-size:12px;
+  margin-top: 10px;
+  color: #797979;
+}
+.textochico{
+  font-family:verdana,arial,helvetica;
+  font-size:9px;
+}
+
+.reg {
+  margin-top: 10px;
+}
+
+.item {
+  min-height: 67px;
+  min-width: 150px;
+}
+
+#container {
+  background: #E7E7E7;
+  color: #ffffff;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 1px;
+}
+
+#container p {
+  margin-bottom: 5px;
+}
+
+#container .texto {
+  color: #A8A8A8;
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.box-style {
+  border: 1px solid #CCCCCC;
+  border-radius: 4px 4px 4px 4px;
+  color: #555555;
+  display: inline-block;
+  font-size: 14px;
+  height: 28px;
+  line-height: 20px;
+  margin-top: 8px;
+  padding: 4px 6px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+
+.button {
+  font-family: 'GothamMedium';
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  color: #FFFFFF;
+  cursor: pointer;
+  float: left;
+  font-size: 12px;
+  height: 34px;
+  padding: 4px;
+  text-transform: uppercase;
+  width: 139px;
+}
+
+.button.submit {
+  text-align: left;
+}
+
+.red-gradient:hover {
+  background: -webkit-gradient(linear,center top, center bottom, from(#b70b03), to(#ec3023));
+  background: -moz-linear-gradient(to bottom, #b70b03, #ec3023);
+  background: -o-linear-gradient(to bottom, #b70b03, #ec3023);
+  background: linear-gradient(to bottom, #b70b03, #ec3023);
+}
+
+.button.cancel {
+  text-align: right;
+}
+
+.hard-gray-gradient:hover{
+  background: -webkit-gradient(linear,center top, center bottom, from(#868686), to(#b5b5b5));
+  background: -moz-linear-gradient(to top, #b5b5b5, #868686);
+  background: -o-linear-gradient(to top, #b5b5b5, #868686);
+  background: linear-gradient(to top, #b5b5b5, #868686);
+}
+
+.image {
+  margin-top: 10px;
+}
+
+.default-button {
+    border-radius: 8px 20px 20px 8px;
+    border: 1px solid #9b9c9c;
+    position: relative;
+    font-family: 'GothamMedium', Helvetica, Arial, sans-serif;
+}
+.large-button {
+    width: 150px;
+    height: 34px;
+    float: right;
+    margin-left: 10px;
+}
+.text-style {
+    display: block;
+    position: absolute;
+}
+
+.text-style-xlarge {
+    color: #ffffff;
+    font-size: 13px;
+    top: 7px;
+    left: 6px;
+}
+
+.text-style-large {
+    color: #ffffff;
+    font-size: 12px;
+    top: 9px;
+    left: 6px;
+}
+.default-circle {
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,.7);
+    -moz-box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,.7);
+    -webkit-box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,.7);
+}
+
+.large-circle {
+    width: 25px;
+    height: 25px;
+    font-size: 17px;
+}
+
+.large-circle i {
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    display: block;
+}
+
+.button-left-orientation {
+    border-radius: 20px 8px 8px 20px !important;   
+}
+
+.circle-left-orientation {
+    left: 5px;
+    top: 4px;
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC="/sps_ar/submit_3.js"></SCRIPT>
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="container" align="center">
+	<p>
+		<b>
+			<font class="texto">Por favor, ingrese los siguientes datos de la tarjeta MASTERCARD y haga su pago:</font>
+		</b>
+	</p>
+	<img src="/assets/test/master-card-image.png" align="center">
+</div>
+
+<%= form_tag(url_for(:fake_sps_validate_master), {:method=>:post,:id=>'DatosTarjetaForm',:name=>'DatosTarjetaForm',:onSubmit=>"return beforesubmit();"}) do%>
+	
+	<!-- Iframe Left Column -->
+  <div class="iframe-left-column">
+
+		<input type="hidden" name="MTARJETA" value="1">
+		
+		<!-- Titular de la tarjeta -->
+		<div class="item">
+		  <div class="texto">Titular de la Tarjeta: </div>
+		  <input tabindex="1" class="box-style" maxLength="30" name="NOMBREENTARJETA" size="30"> 
+		  <div class="textochico">(como aparece en la tarjeta)</div>
+		</div>
+
+    <!-- Codigo de seguridad -->
+    <div class="item">
+      <div class="texto">C&oacute;digo de Seguridad: </div>
+      <input tabindex="3" class="box-style" type="password" maxLength="4"name="CODSEGURIDAD" size="4" autocomplete="off">
+    </div>
+
+    <!-- Tipo de documento -->
+    <div class="item">
+      <div class="texto">Tipo de documento: </div>
+      <SELECT tabindex="5" name="TIPODOC">
+        <OPTION value="1" selected>DNI</OPTION>
+        <OPTION value="2">CI</OPTION>
+        <OPTION value="3">LE</OPTION>
+        <OPTION value="4">LC</OPTION>
+      </SELECT>
+    </div>
+
+    <!-- Email -->
+    <div class="item">
+      <div class="texto">E-Mail: </div>
+      <input tabindex="7" class="box-style" maxLength="50" name="EMAILCLIENTE" size="50"/>
+    </div>
+
+	</div>
+
+	<!-- Iframe Right Column -->
+    <div class="iframe-right-column">
+
+    <!-- Numero de tarjeta -->
+    <div class="item">
+    <div class="texto">N&uacute;mero de Tarjeta:&nbsp; </div>
+    <input tabindex="2" class="box-style" maxLength="16" name="NROTARJETA" size="16" autocomplete="off">
+    <div class="textochico">(sin espacios, ni guiones)</div>
+    </div>
+
+    <!-- Fecha de vencimiento -->
+    <div class="item">
+    <div class="texto">Fecha de Vencimiento:</div>
+    <input tabindex="4" class="box-style" maxlength="4" name="VENCTARJETA" size="4" autocomplete="off"> 
+    <input type="hidden" name="VENCIMIENTO" size="4">
+    <div class="textochico">(en formato <b>MMAA</b>)</div>
+    </div>
+
+    <!-- Numeero de documento -->
+    <div class="item">
+      <div class="texto">N&uacute;mero de Documento:</div>
+      <input tabindex="6" class="box-style" maxLength="20" name="NRODOC" size="20">
+    </div>
+	 
+ 	</div>
+
+<table border = "0" width="100%" height="61" align="center">
+	<td height="57" align="center"><br>
+		<div class="default-button large-button red-gradient finish-button text-hover">
+      <input class="button submit" TYPE="SUBMIT" VALUE="Aceptar" name="ok">
+      <span class="default-circle large-circle">
+        <i class="icon-caret-right"></i>
+      </span>
+    </div>
+		
+    <div class="continue-shopping default-button large-button button-left-orientation hard-gray-gradient text-hover">  
+      <input class="button cancel" TYPE="RESET" VALUE="Cancelar" onclick="window.history.back();">
+      <span class="default-circle large-circle circle-left-orientation">
+        <i class="icon-caret-left"></i>
+      </span>
+    </div>
+		<br>
+		<a TARGET="_blank" href="https://sps.decidir.com/sps_ar/sps_compra.html">
+			<IMG class="image" src="/img/botonsps.gif" border="0">
+		</a> 
+</table>
+<input type="hidden" value="<%= @order_total %>" name="ORDER_TOTAL">
+<input type="hidden" value="<%= @order_quota %>" name="ORDER_QUOTA">
+<input type="hidden" value="<%= @order_currency %>" name="ORDER_CURRENCY">
+<input type="hidden" value="<%= @order_code %>" name="ORDER_CODE">
+
+<% end %>
+</BODY>
+</HTML>

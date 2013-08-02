@@ -1,0 +1,14 @@
+<div class="sps_payment">
+	<span class="sps_payment_amount"><%= Spree::Money.new(payment.amount) %></span>
+	<% payment.actions.each do |action| %>
+    	<%= link_to "(#{t(action)})", fire_admin_order_payment_path(@order, payment, :e => action), :method => :put, :no_text => true, :data => {:action => action} %>
+  	<% end %>
+  	<div class="refund_sps_payment_form hidden">
+		<%= form_for payment, url: fire_admin_order_payment_path(@order, payment, :e => 'refund'), method: :put do |source_form| %>
+			<%= text_field_tag :refund_amount,0, :class => "cash_source_pays_with" %> 
+			<%= button_tag type: 'submit' do %>
+		  		<%= t('update') %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

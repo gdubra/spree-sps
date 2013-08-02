@@ -1,0 +1,8 @@
+= Sps
+
+This project rocks and uses MIT-LICENSE.
+
+To Install
+
+rails g sps:install
+rake db:migrate
